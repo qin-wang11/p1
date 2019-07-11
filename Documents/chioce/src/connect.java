@@ -65,13 +65,14 @@ public class connect {
             String str = "SELECT s.s_name,course.c_name,sum(grade)as grade from choose,student s,course where s.s_id=choose.s_id and course.c_id = choose.c_id  group by s.s_name order by grade desc";
             ps = con.prepareStatement(str);
             ResultSet rs = ps.executeQuery();
-            System.out.println("course" + " " + "average");
+            System.out.println("name"+" "+"course" + " " + "average");
             while (rs.next()) {
-                String name = rs.getString(1);
+                String sname = rs.getString(1);
+                String cname = rs.getString(2);
                 int sum = rs.getInt(3);
 
 
-                System.out.println(name + ":     " + sum);
+                System.out.println(sname + "     "+cname+"      "+ sum);
             }
         } catch (SQLException e) {
             e.printStackTrace();
