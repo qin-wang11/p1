@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.BookMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo.entity.Book">
+        <id column="b_name"  property="b_name" />
+        <result column="author"  property="author" />
+        <result column="publish"  property="publish" />
+        <result column="publishtime"  property="publishtime" />
+        <result column="pushtime"  property="pushtime" />
+        <result column="booktype"  property="booktype" />
+        <result column="borrowstate"  property="borrowstate" />
+    </resultMap>
+    <select id="getBooks" resultMap="BaseResultMap">
+	select b_name,author,publish,publishtime,pushtime,booktype,borrowstate from book ;
+</select>
+    <select id="findBook" resultType="Book">
+	select b_name,author,publish,publishtime,pushtime,booktype,borrowstate from book where  b_name like CONCAT('%',#{value},'%') ;
+</select>
+</mapper>

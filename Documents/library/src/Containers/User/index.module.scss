@@ -1,0 +1,26 @@
+.all{
+  height: 100%;
+  border: 1px solid #d8d8d8;
+}
+.portalRoot {
+  height: 100%;
+  display: flex;
+}
+.leftwide {
+  flex: 0 10%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.rightwide {
+  flex: 1;
+  border: 1px solid #d8d8d8;
+}
+.textsize{
+  border: 1px solid #d8d8d8;
+  text-align: center;
+  font: 5em sans-serif;
+}
+.wq{
+  margin-left: 40%;
+}

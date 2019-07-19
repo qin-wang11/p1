@@ -1,0 +1,28 @@
+.portalRoot {
+    height: 100%;
+    display: flex;
+}
+
+.leftSide {
+    flex: 0 10%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.rightSide {
+    flex: 1;
+    border: 1px solid #d8d8d8;
+}
+.top2{
+    width:100%;
+    height:50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:30px;
+    text-align: center;
+}
+.a{
+    width: 300px;
+    height:300px;
+    margin:200px 25%;
+    
+}

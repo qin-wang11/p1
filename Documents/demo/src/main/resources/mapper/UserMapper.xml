@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserMapper">
+	<!--<resultMap type="User" id="UserMap" >
+       <id column="u_id"  property="u_id" />
+       <result column="u_name"  property="u_name" />
+       <result column="password"  property="password" />
+       <result column="age"  property="age" />
+       <result column="sex"  property="sex" />
+       <result column="phone"  property="phone" />
+       <result column="address"  property="address" />
+       <result column="type"  property="type" />
+   </resultMap>-->
+	<select id="getUser" resultType="User">
+	select u_id,u_name,password,age,sex,phone,address,type from user where type=2;
+    </select>
+	<select id="checkUser" resultType="User">
+		select * from user
+		where u_name = #{username} and
+			password = #{password}
+	</select>
+	<select id="searchuser" resultType="User">
+		select * from user
+		where u_id=#{u_id}
+	</select>
+	<delete id="deleteuser" parameterType="Integer">
+		delete from user where u_id=#{u_id}
+	</delete>
+</mapper>
